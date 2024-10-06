@@ -1,0 +1,969 @@
+                                                                                                                                                                * {
+    margin: 1;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-cursor {
+    cursor: url('1.png'), auto;
+  }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background-color: #0f0f1e;
+    line-height: 1.6;
+    cursor: url('1.png'), auto;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar {
+    background-color: rgba(15, 15, 30, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #64ffda;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    color: #6a98f0;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #64ffda;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-link:hover {
+    color: #64ffda;
+}
+
+.nav-button {
+    background: linear-gradient(45deg, #64ffda, #6a98f0);
+    color: #0f0f1e;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+
+main {
+    padding-top: 80px;
+}
+
+section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    background: linear-gradient(45deg, #64ffda, #6a98f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #64ffda;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #64ffda, #6a98f0);
+    color: #0f0f1e;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(100, 255, 218, 0.1);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.case-item img, .team-member img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.pricing-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(100, 255, 218, 0.1);
+}
+
+.pricing-item.featured {
+    background-color: rgba(100, 255, 218, 0.1);
+    border: 2px solid #64ffda;
+}
+
+.pricing-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.pricing-item .price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #64ffda;
+}
+
+.pricing-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.pricing-item ul li {
+    margin-bottom: 10px;
+}
+
+.order-form, .contact-form {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ccd6f6;
+    font-size: 1rem;
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23ccd6f6' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+select option {
+    background-color: #0a192f;
+    color: #ccd6f6;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #64ffda, #6a98f0);
+    color: #0f0f1e;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(15, 15, 30, 0.8);
+}
+
+/* Новые стили для секции контактов */
+.contacts-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+}
+
+.contact-info h3, .contact-form h3 {
+    margin-bottom: 20px;
+    color: #64ffda;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin-right: 10px;
+    color: #64ffda;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #6a98f0;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(15, 15, 30, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts-container {
+        flex-direction: column;
+    }
+}
+
+/* Style the loading animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it's on top of everything */
+  }
+  
+  .loading img {
+    width: 50px;
+    height: 50px;
+    animation: spin 5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+
+
+
+
+
+  @import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow");
+
+body {
+    font: 14px/1.5 "PT Sans Narrow", sans-serif;
+    background: #080e24 url(http://neography.com/experiment/circles/solarsystem/bg.jpg) repeat;
+    color: #626668;
+}
+
+/* Solar System Styles */
+ul.solarsystem {
+    position: relative;
+    height: 640px;
+    list-style: none;
+    -webkit-transition: all 0.09s ease-in;
+    -moz-transition: all 0.09s ease-in;
+    -o-transition: all 0.09s ease-in;
+    transition: all 0.09s ease-in;
+    overflow: hidden;
+}
+ul.solarsystem li {
+    text-indent: -9999px;
+    display: block;
+    position: absolute;
+    border: 2px solid #394057;
+/*    opacity: 0.7;*/
+}
+ul.solarsystem li span {
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+ul.solarsystem li.active {
+    border-color: #aa4200;
+}
+ul.solarsystem li.active.sun,
+ul.solarsystem li.active span {
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    transform: scale(1.3);
+}
+ul.solarsystem li.active.sun span,
+ul.solarsystem li.active.earth .moon {
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+ul.solarsystem li.sun {
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background: #fc3;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.22, rgb(204,153,0)),
+        color-stop(1, rgb(255,219,112))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(204,153,0) 22%,
+        rgb(255,219,112) 100%
+    );
+    top: 302px;
+    left: 462px;
+    border: none;
+    -webkit-box-shadow: 0 0 50px #c90;
+    -moz-box-shadow: 0 0 50px #c90;
+    box-shadow: 0 0 50px #c90;
+    z-index: 100;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+ul.solarsystem li.sun span {
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;   
+}
+ul.solarsystem li.mercury {
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 52px;
+    -moz-border-radius: 52px;
+    border-radius: 52px;
+    top: 270px;
+    left: 430px;
+    z-index: 99;
+}
+ul.solarsystem li.mercury span {
+    background: #b6bac5;
+    top: 10px;
+    left: 10px;
+}
+ul.solarsystem li.venus {
+    width: 160px;
+    height: 160px;
+    -webkit-border-radius: 82px;
+    -moz-border-radius: 82px;
+    border-radius: 82px;
+    top: 240px;
+    left: 400px;
+    z-index: 98;
+}
+ul.solarsystem li.venus span {
+    background: #bf8639;
+    top: 118px;
+    left: 5px;
+}
+ul.solarsystem li.earth {
+    width: 220px;
+    height: 220px;
+    -webkit-border-radius: 112px;
+    -moz-border-radius: 112px;
+    border-radius: 112px;
+    top: 210px;
+    left: 370px;
+    z-index: 97;
+}
+ul.solarsystem li.earth span {
+    background: #06c;
+    top: 56px;
+    left: 5px;
+}
+ul.solarsystem li.earth span.moon {
+    width: 4px;
+    height: 4px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #ccc;
+    top: 12px;
+    left: 12px;
+}
+ul.solarsystem li.mars {
+    width: 280px;
+    height: 280px;
+    -webkit-border-radius: 142px;
+    -moz-border-radius: 142px;
+    border-radius: 142px;
+    top: 180px;
+    left: 340px;
+    z-index: 96;
+}
+ul.solarsystem li.mars span {
+    background: #aa4200;
+    top: 0px;
+    left: 175px;
+}
+ul.solarsystem li.asteroids_meteorids {
+    top: 155px;
+    left: 315px;
+    z-index: 1;
+    background: url(http://neography.com/experiment/circles/solarsystem/asteroids_meteorids.png) no-repeat 0 0;
+    width: 330px;
+    height: 330px;
+    -webkit-border-radius: 165px;
+    -moz-border-radius: 165px;
+    border-radius: 165px;
+    border: none;
+}
+ul.solarsystem li.jupiter {
+    width: 340px;
+    height: 340px;
+    -webkit-border-radius: 172px;
+    -moz-border-radius: 172px;
+    border-radius: 172px;
+    top: 150px;
+    left: 310px;
+    z-index: 95;
+}
+ul.solarsystem li.jupiter span {
+    background: #e0ae6f;
+    top: 67px;
+    left: 24px;
+}
+ul.solarsystem li.saturn {
+    width: 400px;
+    height: 400px;
+    -webkit-border-radius: 202px;
+    -moz-border-radius: 202px;
+    border-radius: 202px;
+    top: 120px;
+    left: 280px;
+    z-index: 94;
+}
+ul.solarsystem li.saturn span {
+    background: #dfd3a9;
+    top: 24px;
+    left: 300px;
+}
+ul.solarsystem li.saturn span.ring {
+    width: 12px;
+    height: 12px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background: none;
+    border: 2px solid #5a4e34;
+    left: -3px;
+    top: -3px;
+    -webkit-transform: skewY(50deg);
+    -moz-transform: skewY(50deg);
+    -o-transform: skewY(50deg);
+    transform: skewY(50deg);
+}
+ul.solarsystem li.uranus {
+    width: 460px;
+    height: 460px;
+    -webkit-border-radius: 232px;
+    -moz-border-radius: 232px;
+    border-radius: 232px;
+    top: 90px;
+    left: 250px;
+    z-index: 93;
+}
+ul.solarsystem li.uranus span {
+    background: #82b3d1;
+    top: 7px;
+    left: 300px;
+}
+ul.solarsystem li.neptune {
+    width: 520px;
+    height: 520px;
+    -webkit-border-radius: 262px;
+    -moz-border-radius: 262px;
+    border-radius: 262px;
+    top: 60px;
+    left: 220px;
+    z-index: 92;
+}
+ul.solarsystem li.neptune span {
+    background: #77c2ec;
+    top: 0px;
+    left: 200px;
+}
+ul.solarsystem li.pluto {
+    width: 580px;
+    height: 580px;
+    -webkit-border-radius: 292px;
+    -moz-border-radius: 292px;
+    border-radius: 292px;
+    top: 30px;
+    left: 190px;
+    z-index: 91;
+}
+ul.solarsystem li.pluto span {
+    background: #7c6a5c;
+    top: 79px;
+    left: 79px;
+}
+
+ul#descriptions {
+    position: absolute;
+    top: 250px;
+    right: 100px;
+    list-style: none;
+}
+ul#descriptions h2 {
+    cursor: pointer;
+    color: #386077;
+    -webkit-transition: all 0.15s ease-in;
+    -moz-transition: all 0.15s ease-in;
+    -o-transition: all 0.15s ease-in;
+    transition: all 0.15s ease-in;
+    font-size: 20px;
+    position: relative;
+    z-index: 101;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+	margin-bottom: -15px;
+}
+ul#descriptions h2:hover {
+   color: #aa4200; 
+    -webkit-transform: scale(1.08);
+    -moz-transform: scale(1.08);
+    -o-transform: scale(1.08);
+    transform: scale(1.08);
+}
+ul#descriptions li p {
+    position: absolute;
+    left: -250px;
+    top: 0;
+    width: 200px;
+    display: inline;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 13px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    background: #0f132c;
+    padding: 30px;
+    color: #767892;
+    line-height: 1.7;
+    z-index: 100;
+    border: 1px solid #1c203c;
+}
+ul#descriptions h2:hover+p {
+    visibility: visible;
+    opacity: 0.9;
+    left: -280px;
+}
+
+/* CSS3 Animations */
+ul.solarsystem li {
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-name:orbit;
+    
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-timing-function:linear;
+    -moz-animation-name:orbit;
+}
+ul.solarsystem li.earth span {
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-name:moon;
+    
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-timing-function:linear;
+    -moz-animation-name:moon;
+}
+ul.solarsystem li.mercury {-webkit-animation-duration:5s; -moz-animation-duration:5s;}
+ul.solarsystem li.venus {-webkit-animation-duration:8s; -moz-animation-duration:8s;}
+ul.solarsystem li.earth {-webkit-animation-duration:12s; -moz-animation-duration:12s;}
+ul.solarsystem li.earth span {-webkit-animation-duration:2s; -moz-animation-duration:2s;}
+ul.solarsystem li.mars {-webkit-animation-duration:20s; -moz-animation-duration:20s;}
+ul.solarsystem li.asteroids_meteorids {-webkit-animation-duration:50s; -moz-animation-duration:50s;}
+ul.solarsystem li.jupiter {-webkit-animation-duration:30s; -moz-animation-duration:30s;}
+ul.solarsystem li.saturn {-webkit-animation-duration:60s; -moz-animation-duration:60s;}
+ul.solarsystem li.uranus {-webkit-animation-duration:70s; -moz-animation-duration:70s;}
+ul.solarsystem li.neptune {-webkit-animation-duration:100s; -moz-animation-duration:100s;}
+ul.solarsystem li.pluto {-webkit-animation-duration:120s; -moz-animation-duration:120s;}
+
+@-webkit-keyframes orbit { from { -webkit-transform:rotate(0deg) } to { -webkit-transform:rotate(360deg) } }
+@-webkit-keyframes moon { from { -webkit-transform:rotate(0deg) } to { -webkit-transform:rotate(360deg) } }
+
+@-moz-keyframes orbit { from { -moz-transform:rotate(0deg) } to { -moz-transform:rotate(360deg) } }
+@-moz-keyframes moon { from { -moz-transform:rotate(0deg) } to { -moz-transform:rotate(360deg) } }
+
+/*ul.solarsystem:hover li {-webkit-animation-play-state: paused;} */
+
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cosmonaut-test-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cosmonaut-image {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.cosmonaut-photo {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cosmonaut-text {
+    flex: 1;
+    padding-left: 30px;
+}
+
+.cosmonaut-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.cosmonaut-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.cta-button {
+    padding: 12px 24px;
+    font-size: 1.1em;
+    background-color: #007bff;
+    color: rgb(242, 242, 242);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #0f0f1e;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#answerButtons {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#answerButtons button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #ece9e9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#answerButtons button:hover {
+    background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .cosmonaut-test-content {
+        flex-direction: column;
+    }
+
+    .cosmonaut-image, .cosmonaut-text {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+}
+
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .video-container iframe {
+    width: 700px;
+    height: 400px;
+  }
